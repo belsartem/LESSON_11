@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'qa.abels'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    testImplementation (
+            'com.github.javafaker:javafaker:1.0.2',
+            "com.codeborne:selenide:7.2.0",
+            "org.junit.jupiter:junit-jupiter:5.10.1"
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
